@@ -50,7 +50,7 @@ const Service = () => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/update-section', {
+      const response = await axios.post('https://hotelsite-backend.onrender.com/update-section', {
         component: 'ServicePage',
         field: 'lorem23',
         value: loremText,
