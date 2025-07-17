@@ -1,0 +1,135 @@
+.bookingWrapper {
+  background: linear-gradient(
+    90deg,
+    #000 0%,
+    #555 30%,
+    #aaa 50%,
+    #555 70%,
+    #000 100%
+  );
+  padding: 20px 0;
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookingSection {
+  width: 80%;
+  height: 362px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.leftText {
+  flex: 1;
+  color: white;
+  font-size: 42px;
+  line-height: 1.3;
+}
+
+.leftText h2 {
+  font-weight: 300;
+  font-size: 48px;
+}
+
+.bookingForm {
+  flex: 1;
+  background-color: #b78b56;
+  padding: 40px;
+  transform: translateY(-60px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  height: 517px;
+  width: 405px;
+}
+
+.bookingForm label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+.bookingForm input,
+.bookingForm select {
+  width: 100%;
+  padding: 10px;
+  background-color: #a67c52;
+  border: none;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.bookingForm .row {
+  display: flex;
+  gap: 20px;
+}
+
+.bookingForm button {
+  background: none;
+  border: none;
+  margin-top: 20px;
+  color: white;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bookingSection {
+    flex-direction: column;
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .leftText {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .leftText h2 {
+    font-size: 36px;
+  }
+
+  .bookingForm {
+    width: 100%;
+    max-width: 450px;
+    transform: none;
+    height: auto;
+  }
+
+  .bookingForm .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .leftText {
+    font-size: 28px;
+    padding: 0 20px;
+  }
+
+  .leftText h2 {
+    font-size: 30px;
+  }
+
+  .bookingForm {
+    padding: 30px;
+  }
+
+  .bookingForm input,
+  .bookingForm select {
+    font-size: 13px;
+  }
+}

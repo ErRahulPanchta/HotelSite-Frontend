@@ -1,0 +1,265 @@
+.servicePage {
+  font-family: 'Georgia', serif;
+  background-color: white;
+}
+
+.serviceHeader {
+  height: 733px;
+  background: linear-gradient(
+    180deg,
+    #0d0d0d 0%,
+    #2b2b2b 24%,
+    #999999 50%,
+    #2b2b2b 80%,
+    #0d0d0d 100%
+  );
+  padding: 160px 120px 0;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.lineH{
+  width: 1px;
+  height: 60px;
+  background-color: #fff;
+}
+
+.mainContent{
+  width: 90vw;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.serviceHeaderText {
+  margin-top: 100px;
+}
+
+.serviceHeaderText h4 {
+  font-size: 14px;
+  color: #bf9766;
+  letter-spacing: 2px;
+  margin-bottom: -10px;
+}
+
+.serviceHeaderText h2 {
+  font-size: 48px;
+  line-height: 1.3;
+  max-width: 600px;
+  margin-top: -10px;
+  font:bold;
+  font-weight: 400;
+}
+
+.amenitiesIntro {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 10vw 40px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+
+.serviceText {
+  flex: 1;
+}
+
+.line {
+  width: 1px;
+  height: 60px;
+  background-color: #bf9766;
+}
+
+.serviceText h1 {
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+.mainH {
+  color: #bf9766;
+}
+
+.lorem23 {
+  flex: 1;
+  min-width: 280px;
+  color: #555;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 40px 10vw 80px;
+  background-color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.amenityCard {
+  background-color: #eee;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.amenityCard.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.textContent h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.textContent p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.textContent a {
+  color: #bf9766;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.iconRight {
+  font-size: 24px;
+  color: #bf9766;
+}
+
+.addButtonWrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.addButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.ctaForm {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 8px;
+}
+
+.ctaForm input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submitCtaButton {
+  padding: 10px;
+  background-color: #007b5e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.ctaButtonsDisplay {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.ctaButtonItem {
+  padding: 10px 15px;
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 1024px) {
+  .serviceHeader {
+    padding: 120px 60px 0;
+    height: auto;
+  }
+
+  .amenitiesIntro {
+    flex-direction: column;
+    padding: 60px 8vw 40px;
+  }
+
+  .serviceText h1 {
+    font-size: 32px;
+  }
+
+  .lorem23 {
+    font-size: 14px;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: 1fr;
+    padding: 40px 8vw 60px;
+  }
+}
+
+.loremEditBox {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  resize: vertical;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.saveEditBtn {
+  background-color: #007b5e;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+@media (max-width: 600px) {
+  .serviceHeader {
+    padding: 100px 30px 0;
+  }
+
+  .serviceHeaderText h2 {
+    font-size: 32px;
+  }
+
+  .serviceText h1 {
+    font-size: 28px;
+  }
+
+  .lorem23 {
+    font-size: 14px;
+  }
+
+  .amenityCard {
+    flex-direction: column;
+    padding: 30px;
+  }
+}
