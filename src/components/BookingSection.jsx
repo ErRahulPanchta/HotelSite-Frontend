@@ -5,12 +5,12 @@ const BookingSection = () => {
   return (
     <div className="bookingWrapper">
       <div className="bookingSection">
-        {/* Left Text Block */}
+       
         <div className="leftText">
           <h2>Book Your Stay <br />With Us Today</h2>
         </div>
 
-        {/* Right Booking Form */}
+        
         <form className="bookingForm">
           <label htmlFor="name">Name</label>
           <input type="text" id="name" placeholder="Enter your name" />

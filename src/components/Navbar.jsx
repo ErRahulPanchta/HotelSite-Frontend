@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
       </div>
 
-      {/* Hamburger Icon */}
+      
       <div className="hamburger" onClick={toggleMenu}>
         <div className="bar" />
         <div className="bar" />
