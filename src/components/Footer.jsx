@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footerTop">
-       
         <div className="footerLogo">
           <img src="/Logo.png" alt="Imperial Grand Hotel" />
           <p>
@@ -23,17 +22,8 @@ const Footer = () => {
             <li><a href="/service">SERVICE</a></li>
             <li><a href="/room">ROOM</a></li>
           </ul>
-
-          <div className="footerSocialIcons">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaPinterestP /></a>
-            <a href="#"><FaDribbble /></a>
-          </div>
         </div>
 
-        
         <div className="footerSubscribe">
           <h4>SUBSCRIBE</h4>
           <p>Don’t miss to subscribe our news,<br /> kindly fill the form below</p>
@@ -44,10 +34,18 @@ const Footer = () => {
         </div>
       </div>
 
-  
-      <div className="footerDivider" />
+      <div className="footerIconDividerWrapper">
+        <div className="line" />
+        <div className="footerSocialIcons">
+          <a href="#"><FaFacebookF /></a>
+          <a href="#"><FaTwitter /></a>
+          <a href="#"><FaInstagram /></a>
+          <a href="#"><FaPinterestP /></a>
+          <a href="#"><FaDribbble /></a>
+        </div>
+        <div className="line" />
+      </div>
 
-      
       <div className="footerBottom">
         <p>© 2025 Imperial Grand Hotel. All Rights Reserved.</p>
         <div className="footerPolicies">
