@@ -5,6 +5,7 @@ import BookingSection from '../components/BookingSection';
 import { FaConciergeBell, FaSpa, FaBuilding, FaUtensils } from 'react-icons/fa';
 import { useState } from 'react';
 import axios from 'axios'; 
+import AddButtonForm from '../components/AddButtonForm';
 
 const serviceCards = [
   { title: '', desc: '', icon: null },
@@ -34,10 +35,6 @@ const serviceCards = [
 ];
 
 const Service = () => {
-  const [isFormVisible, setIsFormVisible] = useState(false);
-  const [buttonText, setButtonText] = useState('');
-  const [buttonLink, setButtonLink] = useState('');
-  const [ctaButtons, setCtaButtons] = useState([]);
 
   const [isEditing, setIsEditing] = useState(false);
   const [loremText, setLoremText] = useState(
@@ -68,28 +65,6 @@ const Service = () => {
     }
   };
 
-  const handleAddButtonClick = () => {
-    setIsFormVisible(true);
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    if (!buttonText.trim() || !buttonLink.trim()) {
-      alert('Please fill in all fields');
-      return;
-    }
-
-    const newButton = {
-      text: buttonText,
-      link: buttonLink,
-    };
-
-    setCtaButtons([...ctaButtons, newButton]);
-    setButtonText('');
-    setButtonLink('');
-    setIsFormVisible(false);
-  };
 
   return (
     <div className="servicePage">
@@ -100,46 +75,7 @@ const Service = () => {
           <h4>OUR SERVICES</h4>
           <h2>Introducing Our Best Services</h2>
         </div>
-
-        <div className="addButtonWrapper">
-          <button onClick={handleAddButtonClick} className="addButton">
-            + Add Button
-          </button>
-        </div>
-
-        {isFormVisible && (
-          <form onSubmit={handleFormSubmit} className="ctaForm">
-            <label htmlFor="buttonText">Button Text</label>
-            <input
-              type="text"
-              id="buttonText"
-              placeholder="e.g., Call Us"
-              value={buttonText}
-              onChange={(e) => setButtonText(e.target.value)}
-              required
-            />
-
-            <label htmlFor="buttonLink">Button Link</label>
-            <input
-              type="text"
-              id="buttonLink"
-              placeholder="e.g., tel:9876543210"
-              value={buttonLink}
-              onChange={(e) => setButtonLink(e.target.value)}
-              required
-            />
-
-            <button type="submit" className="submitCtaButton">Add CTA</button>
-          </form>
-        )}
-
-        <div className="ctaButtonsDisplay">
-          {ctaButtons.map((btn, index) => (
-            <a href={btn.link} target="_blank" rel="noopener noreferrer" key={index} className="ctaButtonItem">
-              {btn.text}
-            </a>
-          ))}
-        </div>
+        <AddButtonForm/>
       </header>
 
       <div className="mainContent">

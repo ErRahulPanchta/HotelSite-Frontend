@@ -1,0 +1,88 @@
+.addButtom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 2px dashed rgb(171, 170, 170);
+  border-radius: 6px;
+  background: none;
+  color: rgb(171, 170, 170);
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.addBtnForm {
+  background: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.addBtnForm h1 {
+  font-size: 18px;
+  color: rgb(77, 77, 77);
+  margin: 0;
+}
+
+.addBtnForm h2 {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 8px;
+}
+
+.addBtnForm label,
+.addBtnForm select,
+.addBtnForm input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.saveBtn {
+  padding: 8px 16px;
+  background-color: #1a1e95;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  padding: 8px 16px;
+  color: red;
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.renderedButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.customBtnWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editIcon {
+  cursor: pointer;
+  font-size: 18px;
+}

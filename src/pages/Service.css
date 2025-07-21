@@ -135,64 +135,6 @@
   color: #bf9766;
 }
 
-.addButtonWrapper {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.addButton {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #004080;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.ctaForm {
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f5f5f5;
-  width: 90%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  border-radius: 8px;
-}
-
-.ctaForm input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.submitCtaButton {
-  padding: 10px;
-  background-color: #007b5e;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.ctaButtonsDisplay {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.ctaButtonItem {
-  padding: 10px 15px;
-  background-color: #003366;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
 
 
 @media (max-width: 1024px) {
