@@ -3,9 +3,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BookingSection from '../components/BookingSection';
 import { FaConciergeBell, FaSpa, FaBuilding, FaUtensils } from 'react-icons/fa';
-import { useState } from 'react';
-import axios from 'axios'; 
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import AddButtonForm from '../components/AddButtonForm';
+import coding from "../assets/coding.webp";
 
 const serviceCards = [
   { title: '', desc: '', icon: null },
@@ -35,11 +36,20 @@ const serviceCards = [
 ];
 
 const Service = () => {
-
   const [isEditing, setIsEditing] = useState(false);
+  const [image, setimage] = useState(null);
   const [loremText, setLoremText] = useState(
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eius quae laborum ea consequatur quidem, et placeat hic eaque deserunt, odit vel iste.'
   );
+
+  const fileInput = useRef(null);
+
+  useEffect(() => {
+    const savedImage = localStorage.getItem("serviceImage");
+    if (savedImage) {
+      setimage(savedImage);
+    }
+  }, []);
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -65,6 +75,35 @@ const Service = () => {
     }
   };
 
+  const handleImageClick = () => {
+    fileInput.current.click();
+  };
+
+  const handleNewImage = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("image_id", "lorem23");
+
+      const response = await axios.post("http://127.0.0.1:5000/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      });
+
+      const uploadedUrl = "http://127.0.0.1:5000" + response.data.url;
+      setimage(uploadedUrl);
+      localStorage.setItem("serviceImage", uploadedUrl); 
+
+      console.log("Image uploaded successfully.");
+    } catch (error) {
+      console.error("Upload failed:", error);
+      alert("Image upload failed.");
+    }
+  };
 
   return (
     <div className="servicePage">
@@ -75,7 +114,7 @@ const Service = () => {
           <h4>OUR SERVICES</h4>
           <h2>Introducing Our Best Services</h2>
         </div>
-        <AddButtonForm/>
+        <AddButtonForm />
       </header>
 
       <div className="mainContent">
@@ -84,6 +123,26 @@ const Service = () => {
             <div className="line"></div>
             <h2 className="mainH">Introducing our services</h2>
             <h1>Amenities That You <br />Can Enjoy</h1>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src={image ? image : coding}
+                alt="Preview"
+                onClick={handleImageClick}
+                style={{ cursor: "pointer" }}
+              />
+              <input
+                type="file"
+                name="image"
+                id="image"
+                ref={fileInput}
+                onChange={handleNewImage}
+                hidden
+                accept="image/*"
+              />
+            </div>
           </div>
 
           <div className="lorem23">
