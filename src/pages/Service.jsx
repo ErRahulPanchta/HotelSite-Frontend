@@ -57,7 +57,7 @@ const Service = () => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:5000/update-section", {
+      const response = await axios.post("https://growthzybackend.onrender.com/update-section", {
         component: "ServicePage",
         field: "lorem23",
         value: loremText,
