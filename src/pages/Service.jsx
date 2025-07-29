@@ -37,7 +37,7 @@ const serviceCards = [
 
 const Service = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [image, setimage] = useState(null);
+  const [image, setImage] = useState(null);
   const [loremText, setLoremText] = useState(
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eius quae laborum ea consequatur quidem, et placeat hic eaque deserunt, odit vel iste.'
   );
@@ -47,7 +47,7 @@ const Service = () => {
   useEffect(() => {
     const savedImage = localStorage.getItem("serviceImage");
     if (savedImage) {
-      setimage(savedImage);
+      setImage(savedImage);
     }
   }, []);
 
@@ -57,21 +57,21 @@ const Service = () => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axios.post('https://hotelsite-backend.onrender.com/update-section', {
-        component: 'ServicePage',
-        field: 'lorem23',
+      const response = await axios.post("http://127.0.0.1:5000/update-section", {
+        component: "ServicePage",
+        field: "lorem23",
         value: loremText,
       });
 
       if (response.status === 200) {
-        alert('Content updated successfully!');
+        alert("Content updated successfully!");
         setIsEditing(false);
       } else {
-        alert('Failed to update content.');
+        alert("Failed to update content.");
       }
     } catch (error) {
-      console.error('Error saving content:', error);
-      alert('Server error while saving.');
+      console.error("Error saving content:", error);
+      alert("Server error while saving.");
     }
   };
 
@@ -88,16 +88,15 @@ const Service = () => {
       formData.append("image", file);
       formData.append("image_id", "lorem23");
 
-      const response = await axios.post("http://127.0.0.1:5000/upload", formData, {
+      const response = await axios.post("https://growthzybackend.onrender.com/upload", formData, {
         headers: {
-          "Content-Type": "multipart/form-data"
-        }
+          "Content-Type": "multipart/form-data",
+        },
       });
 
-      const uploadedUrl = "http://127.0.0.1:5000" + response.data.url;
-      setimage(uploadedUrl);
-      localStorage.setItem("serviceImage", uploadedUrl); 
-
+      const uploadedUrl = "https://growthzybackend.onrender.com" + response.data.url;
+      setImage(uploadedUrl);
+      localStorage.setItem("serviceImage", uploadedUrl);
       console.log("Image uploaded successfully.");
     } catch (error) {
       console.error("Upload failed:", error);
@@ -122,27 +121,28 @@ const Service = () => {
           <div className="serviceText">
             <div className="line"></div>
             <h2 className="mainH">Introducing our services</h2>
-            <h1>Amenities That You <br />Can Enjoy</h1>
+            <h1>
+              Amenities That You <br />
+              Can Enjoy
+            </h1>
           </div>
 
           <div>
-            <div>
-              <img
-                src={image ? image : coding}
-                alt="Preview"
-                onClick={handleImageClick}
-                style={{ cursor: "pointer" }}
-              />
-              <input
-                type="file"
-                name="image"
-                id="image"
-                ref={fileInput}
-                onChange={handleNewImage}
-                hidden
-                accept="image/*"
-              />
-            </div>
+            <img
+              src={image || coding}
+              alt="Preview"
+              onClick={handleImageClick}
+              style={{ cursor: "pointer" }}
+            />
+            <input
+              type="file"
+              name="image"
+              id="image"
+              ref={fileInput}
+              onChange={handleNewImage}
+              hidden
+              accept="image/*"
+            />
           </div>
 
           <div className="lorem23">
@@ -153,17 +153,24 @@ const Service = () => {
                   value={loremText}
                   onChange={(e) => setLoremText(e.target.value)}
                 />
-                <button onClick={handleSaveClick} className="saveEditBtn">Save</button>
+                <button onClick={handleSaveClick} className="saveEditBtn">
+                  Save
+                </button>
               </>
             ) : (
-              <p onClick={handleEditClick} title="Click to edit">{loremText}</p>
+              <p onClick={handleEditClick} title="Click to edit">
+                {loremText}
+              </p>
             )}
           </div>
         </section>
 
         <section className="amenitiesGrid">
           {serviceCards.map((item, index) => (
-            <div className={`amenityCard ${item.title ? 'dark' : ''}`} key={index}>
+            <div
+              className={`amenityCard ${item.title ? "dark" : ""}`}
+              key={index}
+            >
               {item.title && (
                 <>
                   <div className="textContent">
