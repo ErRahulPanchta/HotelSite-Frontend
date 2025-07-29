@@ -133,8 +133,8 @@ const Service = () => {
               alt="Preview"
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
-              height={170}
-              width={200}
+              height={270}
+              width={400}
             />
             <input
               type="file"
